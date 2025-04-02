@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning Example</title>
+    <style>
+      /* Fixed Header */
+      .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* Sticky Sidebar */
+      .sticky-sidebar {
+        position: sticky;
+        top: 90%; /* Sticks after scrolling past this point */
+        left: 90%; /* Sticks after scrolling past this point */
+        background: lightblue;
+        padding: 10px;
+        width: 200px;
+        height: max-content;
+      }
+
+      /* Relative Box */
+      .relative-box {
+        position: relative;
+        background: lightcoral;
+        padding: 20px;
+        width: 300px;
+        margin-top: 100px;
+      }
+
+      /* Absolute Box inside Relative */
+      .absolute-box {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        background: yellow;
+        padding: 10px;
+      }
+
+      /* Page Layout */
+      .container {
+        display: flex;
+        margin-top: 60px; /* Offset for fixed header */
+      }
+
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .spacer {
+        height: 800px; /* Just to show scrolling */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed Header -->
+    <div class="fixed-header">Fixed Header (Always on Top)</div>
+
+    <div class="container">
+      <!-- Sticky Sidebar -->
+      <div class="sticky-sidebar">Sticky Sidebar (Sticks when scrolling)</div>
+
+      <div class="content">
+        <!-- Relative Positioning -->
+        <div class="relative-box">
+          Relative Box
+          <!-- Absolute Box inside Relative -->
+          <div class="absolute-box">Absolute Box</div>
+        </div>
+
+        <!-- Extra Content for Scrolling -->
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </body>
+</html>

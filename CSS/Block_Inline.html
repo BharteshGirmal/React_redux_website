@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Display: Inline, Block, Inline-Block</title>
+    <style>
+      .inline-example {
+        background-color: lightblue;
+        padding: 10px;
+        border: 1px solid blue;
+      }
+
+      .block-example {
+        background-color: lightcoral;
+        padding: 10px;
+        border: 1px solid red;
+        margin: 10px 0; /* Adds space between block elements */
+      }
+
+      .inline-block-example {
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        background-color: lightgreen;
+        padding: 10px;
+        border: 1px solid green;
+        text-align: center;
+        line-height: 30px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Inline Example</h2>
+    <p>
+      <span class="inline-example">Inline Element 1</span>
+      <span class="inline-example">Inline Element 2</span>
+      <span class="inline-example">Inline Element 3</span>
+    </p>
+    <p>
+      These elements stay on the same line and only take up as much space as
+      needed.
+    </p>
+
+    <h2>Block Example</h2>
+    <div class="block-example">Block Element 1</div>
+    <div class="block-example">Block Element 2</div>
+    <div class="block-example">Block Element 3</div>
+    <p>Each block element starts on a new line and takes up the full width.</p>
+
+    <h2>Inline-Block Example</h2>
+    <div class="inline-block-example">Item 1</div>
+    <div class="inline-block-example">Item 2</div>
+    <div class="inline-block-example">Item 3</div>
+    <p>
+      Inline-block elements stay on the same line but respect width and height
+      settings.
+    </p>
+  </body>
+</html>

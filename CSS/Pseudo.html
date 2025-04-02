@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-classes & Pseudo-elements</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .section {
+        flex: 1;
+        padding: 20px;
+        margin: 10px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      /* Pseudo-classes (:) */
+      a:hover {
+        color: red;
+      }
+
+      input:focus {
+        border: 2px solid blue;
+      }
+
+      input:checked + label {
+        color: green;
+        font-weight: bold;
+      }
+
+      p:first-child {
+        color: darkblue;
+        font-weight: bold;
+      }
+
+      p:last-child {
+        color: purple;
+        font-style: italic;
+      }
+
+      p:nth-child(2) {
+        background: yellow;
+      }
+
+      li:nth-of-type(odd) {
+        color: brown;
+      }
+
+      button:disabled {
+        background: gray;
+        color: white;
+        cursor: not-allowed;
+      }
+
+      div:not(.exclude) {
+        border: 1px solid black;
+        padding: 5px;
+      }
+
+      /* Pseudo-elements (::) */
+      h2::before {
+        content: "🔥 ";
+      }
+
+      h2::after {
+        content: " 🚀";
+      }
+
+      p::first-letter {
+        font-size: 2em;
+        color: red;
+      }
+
+      p::first-line {
+        font-weight: bold;
+        color: green;
+      }
+
+      ::selection {
+        background: black;
+        color: white;
+      }
+
+      ::marker {
+        color: red;
+        font-size: 1.2em;
+      }
+
+      input::placeholder {
+        color: gray;
+        font-style: italic;
+      }
+
+      /* File input */
+      input[type="file"]::file-selector-button {
+        background: darkblue;
+        color: white;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Section - Pseudo-classes -->
+      <section class="section">
+        <h2>Pseudo-classes</h2>
+        <p>First paragraph (Styled using `:first-child`).</p>
+        <p>Second paragraph (Styled using `:nth-child(2)`).</p>
+        <p>Last paragraph (Styled using `:last-child`).</p>
+
+        <ul>
+          <li>Item 1 (Odd - `nth-of-type(odd)`)</li>
+          <li>Item 2 (Even)</li>
+          <li>Item 3 (Odd - `nth-of-type(odd)`)</li>
+        </ul>
+
+        <a href="#">Hover over me (`:hover`)</a>
+
+        <br /><br />
+        <input type="text" placeholder="Focus me (`:focus`)" />
+
+        <br /><br />
+        <input type="checkbox" id="check" />
+        <label for="check">Check me (`:checked`)</label>
+
+        <br /><br />
+        <button disabled>Disabled Button (`:disabled`)</button>
+      </section>
+
+      <!-- Right Section - Pseudo-elements -->
+      <section class="section">
+        <h2>Pseudo-elements</h2>
+        <p>
+          This is a paragraph with a **big red first letter**
+          (`::first-letter`).
+        </p>
+        <p>This text has **green first-line styling** (`::first-line`).</p>
+
+        <ul>
+          <li>Red marker (`::marker`) - Item 1</li>
+          <li>Red marker (`::marker`) - Item 2</li>
+        </ul>
+
+        <input type="text" placeholder="Styled placeholder (`::placeholder`)" />
+
+        <br /><br />
+        <input type="file" />
+      </section>
+    </div>
+  </body>
+</html>

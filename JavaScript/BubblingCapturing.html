@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling vs. Capturing</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      .section {
+        width: 45%;
+        padding: 20px;
+        border: 2px solid black;
+        text-align: center;
+      }
+      .box {
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid gray;
+        cursor: pointer;
+      }
+      .outer {
+        background-color: lightblue;
+      }
+      .middle {
+        background-color: lightgreen;
+      }
+      .inner {
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./LocalStrorage.js"></script>
+    <h2 style="text-align: center">Event Bubbling vs. Capturing</h2>
+    <div class="container">
+      <!-- Bubbling Section -->
+      <div class="section">
+        <h3>Event Bubbling (Child → Parent)</h3>
+        <div class="outer box" id="bubble-outer">
+          Outer (Bubbling)
+          <div class="middle box" id="bubble-middle">
+            Middle
+            <div class="inner box" id="bubble-inner">Inner</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capturing Section -->
+      <div class="section">
+        <h3>Event Capturing (Parent → Child)</h3>
+        <div class="outer box" id="capture-outer">
+          Outer (Capturing)
+          <div class="middle box" id="capture-middle">
+            Middle
+            <div class="inner box" id="capture-inner">Inner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table id="myTable" border="1">
+      <thead>
+        <tr>
+          <th>ASS_PART_NUMBER</th>
+          <th>CHILD_PART_NUMBER</th>
+          <th>PART_LEVEL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- New rows will be added here -->
+      </tbody>
+    </table>
+    <button id="addRowButton">Add Row</button>
+
+    <script>
+      // Bubbling (Child → Parent)
+      document
+        .getElementById("bubble-outer")
+        .addEventListener(
+          "click",
+          () => alert("Outer Div Clicked (Bubbling)"),
+          false
+        );
+      document
+        .getElementById("bubble-middle")
+        .addEventListener(
+          "click",
+          () => alert("Middle Div Clicked (Bubbling)"),
+          false
+        );
+      document
+        .getElementById("bubble-inner")
+        .addEventListener(
+          "click",
+          () => alert("Inner Div Clicked (Bubbling)"),
+          false
+        );
+
+      // Capturing (Parent → Child)
+      document
+        .getElementById("capture-outer")
+        .addEventListener(
+          "click",
+          () => alert("Outer Div Clicked (Capturing)"),
+          true
+        );
+      document
+        .getElementById("capture-middle")
+        .addEventListener(
+          "click",
+          () => alert("Middle Div Clicked (Capturing)"),
+          true
+        );
+      document
+        .getElementById("capture-inner")
+        .addEventListener(
+          "click",
+          () => alert("Inner Div Clicked (Capturing)"),
+          true
+        );
+
+      document
+        .getElementById("addRowButton")
+        .addEventListener("click", function () {
+          let table = document.getElementById("myTable"); // Your table's ID
+
+          // Create a new row and cells
+          let newRow = document.createElement("tr");
+          let cell1 = document.createElement("td");
+          let cell2 = document.createElement("td");
+          let cell3 = document.createElement("td");
+
+          // Add values dynamically
+          cell1.textContent = "New Part Number";
+          cell2.textContent = "New Child Part";
+          cell3.textContent = "Level 1";
+
+          // Append cells to row
+          newRow.appendChild(cell1);
+          newRow.appendChild(cell2);
+          newRow.appendChild(cell3);
+
+          // Append row to table body
+          table.querySelector("tbody").appendChild(newRow);
+        });
+    </script>
+  </body>
+</html>
