@@ -1,0 +1,70 @@
+/* Navbar Styling */
+.custom-navbar {
+  background-color: #212529 !important;
+  /* Dark theme */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+/* Navbar Title */
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8f9fa !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-title:hover {
+  color: #17a2b8 !important;
+  /* Bootstrap info color */
+}
+
+/* Navbar Links */
+.navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow links to wrap if needed */
+  justify-content: center;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f8f9fa !important;
+  margin: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  padding: 8px 12px;
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #17a2b8 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Active Link */
+.navbar-nav .nav-link.active {
+  color: #17a2b8 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #17a2b8;
+}
+
+/* Responsive Navbar */
+@media (max-width: 991px) {
+  .custom-navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}

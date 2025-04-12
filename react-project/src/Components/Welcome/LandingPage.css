@@ -1,0 +1,59 @@
+/* Full viewport height and background styling */
+.landing-page {
+  background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+  /* Soft gradient */
+  color: #343a40;
+  /* Dark text color for better contrast */
+  height: 100vh;
+  /* Full height of the viewport */
+  display: flex;
+  /* Use flexbox for alignment */
+  align-items: flex-start;
+  /* Align items to the top */
+  justify-content: center;
+  /* Center items horizontally */
+  text-align: center;
+  /* Center text */
+  padding: 20px;
+  /* Padding around the content */
+}
+
+/* Title styling */
+.welcome-title {
+  font-size: 3rem;
+  /* Large font size for title */
+  font-weight: bold;
+  /* Bold title */
+  margin: 20px 0;
+  /* Space above and below title */
+}
+
+/* Text styling */
+.welcome-text {
+  font-size: 1.25rem;
+  /* Medium font size for paragraph */
+  max-width: 600px;
+  /* Limit width for readability */
+  margin: 10px 0 30px 0;
+  /* Space above and below paragraph */
+}
+
+/* Button styling */
+.explore-btn {
+  font-size: 1.2rem;
+  /* Font size for button */
+  padding: 10px 20px;
+  /* Button padding */
+  border-radius: 25px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Smooth transitions */
+}
+
+/* Button hover effect */
+.explore-btn:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: scale(1.05);
+  /* Slightly increase size on hover */
+}
