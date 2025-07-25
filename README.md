@@ -47,4 +47,53 @@ It serves as a practice and demonstration of:
 ---
 
 ## 📁 Project Folder Structure
+React_redux_website/
+├── public/ → Static HTML template and favicon
+├── src/
+│ ├── assets/ → Icons, product images
+│ ├── components/ → Header, Navbar, Footer, ProductCard, etc.
+│ ├── features/ → Redux Toolkit slices (e.g., productSlice)
+│ ├── pages/ → ProductPage, HomePage, etc.
+│ ├── App.js → App-level routing logic
+│ ├── store.js → Redux store setup
+│ └── index.js → React entry point with <Provider>
+├── package.json
+└── README.md
+
+
+---
+
+## ⚙️ Technologies Used
+
+| Category         | Tech Stack                            |
+|------------------|----------------------------------------|
+| **Frontend**     | React.js, JSX, SCSS/CSS               |
+| **State**        | Redux Toolkit                         |
+| **Routing**      | React Router DOM                      |
+| **Dev Tools**    | VSCode, Chrome DevTools, ESLint       |
+| **Deployment**   | Netlify / GitHub Pages (optional)     |
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository and get started locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/BharteshGirmal/React_redux_website.git
+cd React_redux_website
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm start
+
+🙋‍♂️ About the Developer
+👨‍💻 Bhartesh Girmal
+💼 Full Stack Developer | MERN | Java | Spring | React
+🌐 Portfolio Website
+📬 LinkedIn
+📦 GitHub
 
