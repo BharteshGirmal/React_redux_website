@@ -1,10 +1,10 @@
 /* Full viewport height and background styling */
 .landing-page {
-  background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+  background: linear-gradient(135deg, #f8f9fa, #cde4f5);
   /* Soft gradient */
   color: #343a40;
   /* Dark text color for better contrast */
-  height: 100vh;
+  height: max-content;
   /* Full height of the viewport */
   display: flex;
   /* Use flexbox for alignment */
