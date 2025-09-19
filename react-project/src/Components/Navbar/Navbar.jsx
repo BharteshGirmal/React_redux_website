@@ -55,6 +55,12 @@ function NavbarComponent() {
               <Nav.Link as={Link} to="/reactapi">
                 React With API
               </Nav.Link>
+              <Nav.Link as={Link} to="/react18">
+                React 18 Features
+              </Nav.Link>
+              <Nav.Link as={Link} to="/react19">
+                React 19 Features
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

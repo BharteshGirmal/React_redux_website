@@ -16,6 +16,8 @@ import Optimization from "./Components/8. Performance Optimization/Optimization"
 import LandingPage from "./Components/Welcome/LandingPage";
 import ReactForms from "./Components/9. Forms in React/ReactForms";
 import ReactApi from "./Components/10. React with APIs/ReactApi";
+import React18Component from "./Components/React 18 Features/React18Component";
+import React19Component from "./Components/React 19 Features/React19Component";
 function App() {
   return (
     <MyContextProvider>
@@ -36,6 +38,8 @@ function App() {
           <Route path="/Performance" element={<Optimization />} />
           <Route path="/ReactForms" element={<ReactForms />} />
           <Route path="/reactApi" element={<ReactApi />} />
+          <Route path="/react18" element={<React18Component />} />
+          <Route path="/react19" element={<React19Component />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
