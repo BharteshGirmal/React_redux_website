@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useActionState } from "react";
-import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Card, Col, Form, Row } from "react-bootstrap";
 
 function DisplayItem({ item }) {
   return (
@@ -18,7 +18,7 @@ const SubmitButton = ({ isPending }) => (
 );
 
 export default function React19Component() {
-  const [items, setItems] = useState([
+  const [items] = useState([
     "React 19 Features",
     "Actions and Forms",
     "New Hooks",
@@ -27,11 +27,9 @@ export default function React19Component() {
     "useFormStatus",
   ]);
 
-  const [state, submitAction, isPending] = useActionState();
-
   const [resolvedMessage, setResolvedMessage] = useState("");
 
-  // ✅ Fetch or resolve message safely in client
+  // Resolve message safely in client
   useEffect(() => {
     const fetchMessage = async () => {
       const msg = await new Promise((res) =>
@@ -65,10 +63,9 @@ export default function React19Component() {
                         This is a demo form input
                       </Form.Text>
                     </Form.Group>
-                    <SubmitButton isPending={isPending} />
+                    <SubmitButton isPending={false} />
                   </Form>
 
-                  {/* Resolved message */}
                   {resolvedMessage && (
                     <p className="mt-3 text-info">{resolvedMessage}</p>
                   )}
