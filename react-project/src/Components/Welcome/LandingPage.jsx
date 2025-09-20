@@ -82,7 +82,7 @@ const styles = {
     marginTop: "10px",
     fontWeight: "600",
     fontSize: "16px",
-    color:'black',
+    color: "black !important",
   },
 
   landingPage: {
@@ -101,6 +101,23 @@ const styles = {
   welcomeText: {
     fontSize: "1.2rem",
     marginBottom: "30px",
+  },
+
+  letter: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: "10px",
+  },
+
+  subletter: {
+    padding: "5px 8px",
+    border: "1px solid green",
+    background: "#926752",
+    fontWeight: "bold",
+    borderRadius: "50%",
+    boxShadow: "1px 1px 5px black",
+    cursor: "pointer",
   },
 };
 
@@ -227,6 +244,31 @@ function Tiles({ letter, setOutput }) {
     </button>
   );
 }
+
+function UserList({ list }) {
+  return (
+    <div style={styles.letter}>
+      {list.map((l, index) => (
+        <div
+          style={styles.subletter}
+          key={index}
+          onClick={() => alert(`You clicked ${l}`)}
+        >
+          {l}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function WithLoader(Component) {
+  return function AnatherFunction({ isLoading, ...props }) {
+    if (isLoading) return <p>Loading ...</p>;
+    return <Component {...props} />;
+  };
+}
+
+const UserListWithLoader = WithLoader(UserList);
 
 export default function LandingPage() {
   const [count, setCount] = useState(0);
@@ -524,6 +566,18 @@ export default function LandingPage() {
 
   const [letter, setLetter] = useState("");
   const [output, setOutput] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const letters = [];
+  for (let i = 65; i <= 90; i++) letters.push(String.fromCharCode(i));
+  useEffect(() => {
+    const timmer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timmer);
+    };
+  }, []);
 
   return (
     <>
@@ -584,11 +638,17 @@ export default function LandingPage() {
                   : "Click some tiles!"}
               </div>
             </div>
-          </div>
 
-          <div style={styles.flexcard}>
-            <h1 style={styles.title}>Weather App</h1>
-            <WeatherApp />
+            <div style={styles.flexcard}>
+              <h3 style={styles.title}>Weather App</h3>
+              <WeatherApp />
+            </div>
+
+            <div style={styles.flexcard}>
+              <h3 style={styles.title}>Higher Order Component</h3>
+
+              <UserListWithLoader isLoading={loading} list={letters} />
+            </div>
           </div>
         </div>
       </div>
